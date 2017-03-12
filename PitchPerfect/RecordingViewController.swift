@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordingViewController: UIViewController {
+class RecordingViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder : AVAudioRecorder!
     
@@ -18,7 +18,8 @@ class RecordingViewController: UIViewController {
     @IBOutlet weak var hintLabel: UILabel!
     
     let startHint = "Tab to Record", stopHint = "Recoding..."
-
+    let segueIndentifierForPlayingRecords = "recodingFinished"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,6 +42,7 @@ class RecordingViewController: UIViewController {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self // make the other view can access the record file
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
@@ -54,6 +56,24 @@ class RecordingViewController: UIViewController {
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag
+        {
+            performSegue(withIdentifier: segueIndentifierForPlayingRecords, sender: audioRecorder.url) // send url of record file to segue to next view
+        }
+        else{
+            print("Recording failed.")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segueIndentifierForPlayingRecords == segue.identifier{
+            let playSoundVC = segue.destination as! PlayRecordingViewController
+            let recordAudioURL = sender as! URL
+            PlayRecordingViewController.recordedAudioURL = recordAudioURL
+        }
     }
 }
 
