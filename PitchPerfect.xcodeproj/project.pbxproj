@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C72286AF1E77046A00C5D882 /* PlayRecordingViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72286AE1E77046A00C5D882 /* PlayRecordingViewController+Audio.swift */; };
 		C75BE87F1E75DABB0000B5CB /* PlayRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75BE87E1E75DABB0000B5CB /* PlayRecordingViewController.swift */; };
 		C772419E1E75D37600F78431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772419D1E75D37600F78431 /* AppDelegate.swift */; };
 		C77241A01E75D37600F78431 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772419F1E75D37600F78431 /* RecordingViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C72286AE1E77046A00C5D882 /* PlayRecordingViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlayRecordingViewController+Audio.swift"; sourceTree = "<group>"; };
 		C75BE87E1E75DABB0000B5CB /* PlayRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRecordingViewController.swift; sourceTree = "<group>"; };
 		C772419A1E75D37600F78431 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C772419D1E75D37600F78431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C77241A61E75D37600F78431 /* LaunchScreen.storyboard */,
 				C77241A91E75D37600F78431 /* Info.plist */,
 				C75BE87E1E75DABB0000B5CB /* PlayRecordingViewController.swift */,
+				C72286AE1E77046A00C5D882 /* PlayRecordingViewController+Audio.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75BE87F1E75DABB0000B5CB /* PlayRecordingViewController.swift in Sources */,
+				C72286AF1E77046A00C5D882 /* PlayRecordingViewController+Audio.swift in Sources */,
 				C77241A01E75D37600F78431 /* RecordingViewController.swift in Sources */,
 				C772419E1E75D37600F78431 /* AppDelegate.swift in Sources */,
 			);
